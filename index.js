@@ -68,7 +68,7 @@ app.use(
 app.use(express.json());
 
 app.get("/api", (req, res) => {
-  res.send("<h2>Hi  There</h2>");
+  res.send("<h2>Hi  There cc nek</h2>");
   console.log("yeah it ran");
 });
 

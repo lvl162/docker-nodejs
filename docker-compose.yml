@@ -1,0 +1,30 @@
+services:
+  nginx:
+    image: nginx:stable-alpine
+    # ports:
+    #   - "3000:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
+  node-app:
+    # ports:
+    #   - '3123:3000'
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - PORT=3000
+    depends_on: 
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=lvl162
+      - MONGO_INITDB_ROOT_PASSWORD=1622000
+    volumes:
+      - mongo-db:/data/db
+  redis:
+    image: redis
+volumes:
+  mongo-db:

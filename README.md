@@ -10,7 +10,7 @@ curl -d '{"username":"lvl", "password":"12345678"}' -H "Content-Type: applicatio
 curl -d '{"title":"lvl post", "body":"cc nek"}' -H "Content-Type: application/json" -X POST http://localhost:3000/api/posts
 ```
 ## 3. Build and attach services to new container
-docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build -d 
+```docker-compose -f docker-compose.yml -f docker-compose.prod.yml up --build -d ```
 
 # Production 
 
